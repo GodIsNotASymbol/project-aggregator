@@ -2,7 +2,6 @@ package com.example.project_aggregator.Controller;
 
 import com.example.project_aggregator.entity.Item;
 import com.example.project_aggregator.repository.ItemRepository;
-import com.example.project_aggregator.repository.ItemRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +15,7 @@ public class MainController {
 
 
     @Autowired
-    ItemRepositoryInterface itemRepositoryInterface;
+    ItemRepository itemRepository;
 
     /*@Autowired
     public MainController(ItemRepositoryInterface itemRepositoryInterface){
@@ -27,7 +26,7 @@ public class MainController {
     public ModelAndView templates(Model model){
 
 
-        List<Item> all_items = itemRepositoryInterface.selectAll();
+        List<Item> all_items = itemRepository.selectAll();
         ModelAndView mav = new ModelAndView();
         mav.setViewName("HeaderAndSidebarTemplate");
         model.addAttribute("Test", "thymeleaf replace");
