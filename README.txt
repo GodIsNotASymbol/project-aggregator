@@ -29,8 +29,10 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator):
-- Hacer Modelo entidad relacion, revisar como hacer para guardar fotos en una columna de una tabla
-- Hacer la pagina principal, sin paginado
+- Hacer la pagina principal, solo con algunas descripciones y html que las encuadre
+- Hacer la pagina principal, ahora mejor vista, con paginado
+- Hacer Modelo entidad relacion para las fotos, revisar como hacer para guardar fotos en una columna de una tabla
+- Alterar la pagina principal como para que muestre las fotos en los encuadres
 - Hacer paginado para la pagina principal
 - Definir cantidad de items por pagina
 - Hacer modal cuando se aprieta el item, sin difuminacion gris
@@ -41,6 +43,8 @@ Aplicacion web:
 - Chequear que funcione localmente y a ver que le parece a ma
 - Como hago para publicar y abrir a la web la IP y el puerto? Puedo hacerlo con un google cloud gratis??? O amazon gratis???
 -----DONE(Pagina aggregator):
+- Ya puedo traer elementos desde la base de datos usando el patron Repository
+- Pude conectar la base de datos, era que el puerto en el docker estaba abierto el 3307 no el 3306
 - Arregladas las dependencias y maven instalo las JPA annotations como para hacer el modelo entidad relacion
 - Hacer el css como para que main page este por debajo y al costado del header y de la sidebar. En cada pagina que voy a usar el template, tambien voy a usar el css
 - Hacer que el template sea inheritable
