@@ -29,7 +29,7 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator):
-- Aprender lo de bootstrap las columnas y las filas, y ver si puedo ponerlas al centro de la pagina
+- Trasladar las variables hardcodeadas al controller, y hacer que sea un simulacro de tomar elementos de la lista y meterlos en la pagina principal
 - Hacer la pagina principal, solo con algunas descripciones y html que las encuadre
 - Hacer la pagina principal, ahora mejor vista, con paginado
 - Hacer Modelo entidad relacion para las fotos, revisar como hacer para guardar fotos en una columna de una tabla
@@ -44,6 +44,7 @@ Aplicacion web:
 - Chequear que funcione localmente y a ver que le parece a ma
 - Como hago para publicar y abrir a la web la IP y el puerto? Puedo hacerlo con un google cloud gratis??? O amazon gratis???
 -----DONE(Pagina aggregator):
+- Aprender lo de bootstrap las columnas y las filas, y ver si puedo ponerlas al centro de la pagina
 - Agregue Bootstrap al frontend, inherited from the header and sidebar
 - Ya puedo traer elementos desde la base de datos usando el patron Repository
 - Pude conectar la base de datos, era que el puerto en el docker estaba abierto el 3307 no el 3306
