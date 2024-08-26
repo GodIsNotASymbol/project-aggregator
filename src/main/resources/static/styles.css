@@ -34,6 +34,26 @@ background-color: #a3e3c4;
 position: fixed;
 left: 250px;
 right: 80px;
-display: block;
+display: flex;
+justify-content: center;
+align-items: center;
 /*background-color: #101010;*/
+}
+
+.frame{
+position: inherit;
+display: flex;
+justify-content: center;
+}
+
+.flex-center{
+display: flex;
+justify-content: center;
+}
+
+.inner-frame{
+    width: 80%;
+    height: 80%;
+    background-color: lightblue;
+    padding: 5%;
 }

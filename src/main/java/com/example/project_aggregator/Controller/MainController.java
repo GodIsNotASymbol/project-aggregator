@@ -28,8 +28,10 @@ public class MainController {
 
         List<Item> all_items = itemRepository.selectAll();
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("HeaderAndSidebarTemplate");
-        model.addAttribute("Test", "thymeleaf replace");
+        mav.setViewName("mainPage");
+        model.addAttribute("Title", "Nabimari");
+        model.addAttribute("Sidebar_desc", "Nabi Mari");
+        model.addAttribute("Description", "A noble description");
         return mav;
     }
 
