@@ -29,6 +29,7 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator):
+- Tal vez hacer que sea single column en vez de double, y usar el th:each
 - Trasladar las variables hardcodeadas al controller, y hacer que sea un simulacro de tomar elementos de la lista y meterlos en la pagina principal
 - Hacer la pagina principal, solo con algunas descripciones y html que las encuadre
 - Hacer la pagina principal, ahora mejor vista, con paginado
