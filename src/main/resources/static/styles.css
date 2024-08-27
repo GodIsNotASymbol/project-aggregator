@@ -5,6 +5,16 @@
     text-decoration: none;
 }
 
+html, body {
+    height:100%
+    max-height: 100%; /* Ensure it’s at least the full height of the viewport */
+    overflow-y: auto;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
 .header{
     width: 100%;
     height: 80px;
@@ -31,19 +41,17 @@ background-color: #a3e3c4;
 }
 
 .main_page{
+max-height: 100%;
 position: fixed;
 left: 250px;
-right: 80px;
+top: 80px;
 display: flex;
 justify-content: center;
 align-items: center;
 /*background-color: #101010;*/
-}
-
-.frame{
-position: inherit;
-display: flex;
-justify-content: center;
+background-color: lightgray;
+overflow: auto;
+overflow-y: auto;
 }
 
 .flex-center{
@@ -52,8 +60,14 @@ justify-content: center;
 }
 
 .inner-frame{
+    position: fixed;
+    left: 250px;
+    top: 80px;
     width: 80%;
-    height: 80%;
-    background-color: lightblue;
+    height: auto;
+    max-height:100%;
+    background-color: lightgray;
     padding: 5%;
+    overflow: auto;
+    overflow-y: auto;
 }
