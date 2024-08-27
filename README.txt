@@ -28,10 +28,7 @@ Aplicacion web:
 - Tiene que tener en el readme como hacer la installation
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
------TODO(Pagina aggregator):
-- Tal vez hacer que sea single column en vez de double, y usar el th:each
-- Trasladar las variables hardcodeadas al controller, y hacer que sea un simulacro de tomar elementos de la lista y meterlos en la pagina principal
-- Hacer la pagina principal, solo con algunas descripciones y html que las encuadre
+-----TODO(Pagina aggregator)-----------------------------------
 - Hacer la pagina principal, ahora mejor vista, con paginado
 - Hacer Modelo entidad relacion para las fotos, revisar como hacer para guardar fotos en una columna de una tabla
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
@@ -43,8 +40,14 @@ Aplicacion web:
 - Implementar pagina del edit, solo se puede acceder con Rol admin
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
+- Como hacer para hacerla mas linda la pagina web?
 - Como hago para publicar y abrir a la web la IP y el puerto? Puedo hacerlo con un google cloud gratis??? O amazon gratis???
------DONE(Pagina aggregator):
+
+-----DONE(Pagina aggregator)------------------------------------------
+- Agregarle un color de fondo al html
+- Hacer la pagina principal, solo con algunas descripciones y html que las encuadre
+- Trasladar las variables hardcodeadas al controller, y hacer que sea un simulacro de tomar elementos de la lista y meterlos en la pagina principal
+- Tal vez hacer que sea single column en vez de double, y usar el th:each
 - Aprender lo de bootstrap las columnas y las filas, y ver si puedo ponerlas al centro de la pagina
 - Agregue Bootstrap al frontend, inherited from the header and sidebar
 - Ya puedo traer elementos desde la base de datos usando el patron Repository
