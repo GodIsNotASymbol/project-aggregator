@@ -1,0 +1,9 @@
+CREATE TABLE photo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    filename TEXT,
+    timestamp_created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    timestamp_edited DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    timestamp_deleted DATETIME,
+	item_id INT,
+	FOREIGN KEY (item_id) REFERENCES item(id) ON DELETE CASCADE
+);
