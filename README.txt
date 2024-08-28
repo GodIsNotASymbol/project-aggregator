@@ -29,6 +29,7 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
+- Implementar botones de paginado con bootstrap
 - Hacer la pagina principal, ahora mejor vista, con paginado
 - Hacer Modelo entidad relacion para las fotos, revisar como hacer para guardar fotos en una columna de una tabla
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
@@ -44,6 +45,9 @@ Aplicacion web:
 - Como hago para publicar y abrir a la web la IP y el puerto? Puedo hacerlo con un google cloud gratis??? O amazon gratis???
 
 -----DONE(Pagina aggregator)------------------------------------------
+- Implemente redirect desde la pagina "/" a la paginada
+- Hacer que la pagina principal reciba un numero de pagina como requestParam, y que devuelva los items segun ese numero de pagina.
+- Hacer el paginado, que traiga de a 3 Items
 - Agregarle un color de fondo al html
 - Hacer la pagina principal, solo con algunas descripciones y html que las encuadre
 - Trasladar las variables hardcodeadas al controller, y hacer que sea un simulacro de tomar elementos de la lista y meterlos en la pagina principal
