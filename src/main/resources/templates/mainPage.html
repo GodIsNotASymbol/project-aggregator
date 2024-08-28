@@ -3,17 +3,27 @@
 <div class="main_page container">
     <div class="inner-frame">
         <div class="row" th:each="item: ${Items}" style="padding-bottom: 50px">
-            <div id="photo1" class="col-sm">
-                <div class="row flex-center">
-                    <h3 th:text="${PhotoTitle}">Photo1</h3>
-                </div>
-                <div class="row flex-center">
-                    <img th:src="${PhotoBase64}" alt="Base64 Image">
-                </div>
-                <div class="row flex-center">
-                    <p th:text="${item.description}">Description unchanged</p>
+            <div class="col-md">
+                <div id="photo1" class="col-sm">
+                    <div class="row flex-center">
+                        <h3 th:text="${PhotoTitle}">Photo1</h3>
+                    </div>
+                    <div class="row flex-center">
+                        <img th:src="${PhotoBase64}" alt="Base64 Image">
+                    </div>
+                    <div class="row flex-center">
+                        <p th:text="${item.description}">Description unchanged</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="row flex-center">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item" th:each="page: ${PageNumbers}"><a class="page-link" th:href="${page.redirectUrl}" th:text="${page.number}"></a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
+
 </div>
