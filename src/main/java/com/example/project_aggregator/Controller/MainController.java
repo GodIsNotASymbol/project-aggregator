@@ -3,10 +3,15 @@ package com.example.project_aggregator.Controller;
 import com.example.project_aggregator.entity.Item;
 import com.example.project_aggregator.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -22,11 +27,13 @@ public class MainController {
         this.itemRepositoryInterface = itemRepositoryInterface;
     }*/
 
-    @GetMapping("/")
-    public ModelAndView templates(Model model){
-
-
-        List<Item> all_items = itemRepository.selectAll();
+    @GetMapping("/mainPage")
+    public ModelAndView mainPage(@RequestParam Integer page, Model model){
+        // page is just the page number
+        int pageIndex = page-1;
+        int pageSize = 3;
+        Pageable pageWithThreeElements = PageRequest.of(pageIndex,pageSize);
+        Page<Item> all_items = itemRepository.findAll(pageWithThreeElements);
         ModelAndView mav = new ModelAndView();
         mav.setViewName("mainPage");
         model.addAttribute("Title", "Marinabi");
@@ -38,6 +45,13 @@ public class MainController {
         return mav;
     }
 
+
+    @GetMapping("/")
+    public RedirectView redirect(){
+        String url = "/mainPage?page=1";
+        return new RedirectView(url);
+    }
+
     @GetMapping("/login")
     public ModelAndView login(Model model){
 
@@ -45,11 +59,6 @@ public class MainController {
         mav.setViewName("loginPage");
         model.addAttribute("Test", "thymeleaf replace");
         return mav;
-    }
-
-    @GetMapping("/helloworld")
-    public String helloworld(){
-        return "HelloWorld";
     }
 
     @GetMapping("/headertemplate")
