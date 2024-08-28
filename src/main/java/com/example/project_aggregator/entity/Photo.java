@@ -24,5 +24,5 @@ public class Photo {
 
     @ManyToOne(targetEntity = Item.class, optional = false)
     @JoinColumn(name = "item_id", nullable = false)
-    int itemId;
+    Item item;
 }

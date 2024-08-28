@@ -2,7 +2,9 @@ package com.example.project_aggregator.Controller;
 
 import com.example.project_aggregator.Dto.PageNumberDto;
 import com.example.project_aggregator.entity.Item;
+import com.example.project_aggregator.entity.Photo;
 import com.example.project_aggregator.repository.ItemRepository;
+import com.example.project_aggregator.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,10 +26,12 @@ public class MainController {
     @Autowired
     ItemRepository itemRepository;
 
-    /*@Autowired
-    public MainController(ItemRepositoryInterface itemRepositoryInterface){
-        this.itemRepositoryInterface = itemRepositoryInterface;
-    }*/
+    private final PhotoService photoService;
+
+    @Autowired
+    public MainController(PhotoService photoService){
+        this.photoService = photoService;
+    }
 
     private List<PageNumberDto> makePageNumberDtoList(int numberOfPages){
         List<PageNumberDto> res = new ArrayList<>();
@@ -55,6 +59,8 @@ public class MainController {
             numberOfPages += 1;
         }
         List<PageNumberDto> pageNumbers = makePageNumberDtoList(numberOfPages);
+
+        Photo test = this.photoService.retrievePhotoForItem(all_items.getContent().get(0));
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("mainPage");
