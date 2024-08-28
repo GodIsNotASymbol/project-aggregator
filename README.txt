@@ -29,8 +29,9 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- revisar como hacer para levantar las fotos segun el filename en la columna filename de la tabla
+- Usar un service para levantar las fotos de la carpeta uploads/photos, y devolverlas como base64
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
+- Alterar la main page como para que cuando se presione un titulo, se lleve a la pagina grande de lo que se eligio
 - Hacer paginado para la pagina principal
 - Definir cantidad de items por pagina
 - Hacer modal cuando se aprieta el item, sin difuminacion gris
