@@ -1,6 +1,6 @@
 package com.example.project_aggregator.Controller;
 
-import com.example.project_aggregator.PageNumberDto;
+import com.example.project_aggregator.Dto.PageNumberDto;
 import com.example.project_aggregator.entity.Item;
 import com.example.project_aggregator.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
