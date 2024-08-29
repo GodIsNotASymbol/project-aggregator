@@ -29,19 +29,19 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Evitar que se guarde cualquier cosa si no se sube una foto
+- Hacer que en la view del item no se pase el max width ni el max height
 - Hacer que la pagina del create use una Form en vez de cosas sueltas
-- Implementar pagina del create
 - Implementar pagina del edit
 - Implementar Login, autenticacion y autorizacion
 - Implementar que las paginas de edit y create solo se puede acceder con Rol admin
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
-- Como hacer para hacerla mas linda la pagina web?
+- Investigar como hacer para que sea linda la pagina web
 - Como hago para publicar y abrir a la web la IP y el puerto? Puedo hacerlo con un google cloud gratis??? O amazon gratis???
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Evitar que se guarde cualquier cosa si no se sube una foto
 - Implementar subir y guardar la foto en el sistema en la carpeta uploads/photos, y hacer la entidad relacionada al item correspondiente
 - Implementar el controller PostMapping que guarde el valor de textarea en item description y title en la tabla item
 - Implementar la ajax call que tome el valor de la textarea y del input, y lo pase al controller PostMapping
