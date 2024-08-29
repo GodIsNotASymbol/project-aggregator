@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
+<div class="main_page container">
+    <!-- Here must come the back button ---->
+    <div class="inner-frame">
+        <div class="row"  style="padding-bottom: 20px">
+            <div class="col-md">
+                <div id="photo1" class="col-sm">
+                    <div class="row flex-center">
+                        <h3 th:text="${title}">Title</h3>
+                    </div>
+                    <div class="row flex-center">
+                        <img th:src="${base64Image}" alt="Base64 Image">
+                    </div>
+                    <div class="row flex-center">
+                        <p th:text="${description}" alt="Base64 Image"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

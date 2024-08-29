@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -105,6 +106,13 @@ public class MainController {
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("viewItem");
+        List<Integer> idlist = Arrays.asList(item);
+        Item itemFound = this.itemRepository.findAllById(idlist).get(0);
+        String base64Image = this.photoService.retrievePhotoBase64ForItem(itemFound);
+        model.addAttribute("title", itemFound.getTitle());
+        model.addAttribute("base64Image", base64Image);
+        model.addAttribute("description", itemFound.getDescription());
+
         return mav;
     }
 }
