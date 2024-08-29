@@ -29,7 +29,9 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Usar un service para levantar las fotos de la carpeta uploads/photos, y devolverlas como base64
+- Cambiar los nombres de las fotos en la base de datos a butterfly.jpeg
+- Crear mainPageItemDto que tenga todo lo necesario para mostrar en la pagina principal-> Titulo, Foto
+- asegurarse que no queden rezagos del hardcodeo que hice antes sobre los titulos y las fotos
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 - Alterar la main page como para que cuando se presione un titulo, se lleve a la pagina grande de lo que se eligio
 - Hacer paginado para la pagina principal
@@ -44,6 +46,10 @@ Aplicacion web:
 - Como hago para publicar y abrir a la web la IP y el puerto? Puedo hacerlo con un google cloud gratis??? O amazon gratis???
 
 -----DONE(Pagina aggregator)------------------------------------------
+- Cambiar item que el tipo de description sea el correcto, y agregar tambien title varchar 255
+- Remover la descripcion en la pagina principal
+- Usar un service para levantar las fotos de la carpeta uploads/photos, y devolverlas como base64
+- Usar un service para levantar las fotos como entidad relacionadas a un item en particular
 - Hacer Modelo entidad relacion para las fotos
 - Hacer la pagina principal, ahora mejor vista, con paginado
 - Implementar botones de paginado con bootstrap
