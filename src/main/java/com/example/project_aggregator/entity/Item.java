@@ -23,6 +23,9 @@ public class Item {
     @Column(name = "deleted_date")
     private Date deleted_date;
 
+    @Column(name = "title")
+    private String title;
+
     public Item(){}
 
     public Long getId() {
@@ -63,5 +66,13 @@ public class Item {
 
     public void setDeleted_date(Date deleted_date) {
         this.deleted_date = deleted_date;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
