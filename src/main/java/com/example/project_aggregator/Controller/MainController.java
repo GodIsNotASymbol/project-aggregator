@@ -5,6 +5,7 @@ import com.example.project_aggregator.Dto.PageNumberDto;
 import com.example.project_aggregator.entity.Item;
 import com.example.project_aggregator.entity.Photo;
 import com.example.project_aggregator.repository.ItemRepository;
+import com.example.project_aggregator.repository.PhotoRepository;
 import com.example.project_aggregator.service.PhotoService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -29,6 +32,9 @@ public class MainController {
 
     @Autowired
     ItemRepository itemRepository;
+
+    @Autowired
+    PhotoRepository photoRepository;
 
     private final PhotoService photoService;
 
@@ -132,7 +138,19 @@ public class MainController {
 
     @PostMapping("/createItem")
     public ModelAndView createItemPost(HttpServletRequest request, Model model
-            , @RequestParam("title") String title, @RequestParam("description") String description){
+            , @RequestParam("title") String title
+            , @RequestParam("description") String description
+            , @RequestParam("image") MultipartFile image){
+        if (!image.isEmpty()) {
+            Item item = new Item();
+            item.setTitle(title);
+            item.setDescription(description);
+            item.setCreated_date(new Date());
+            item.setLast_edit_date(new Date());
+            itemRepository.save(item);
+
+            String success = this.photoService.saveImage(image, item);
+        }
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("createItem");

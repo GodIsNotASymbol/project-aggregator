@@ -6,10 +6,14 @@ import com.example.project_aggregator.repository.PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Date;
 
 @Service
 public class PhotoService {
@@ -47,5 +51,37 @@ public class PhotoService {
             e.printStackTrace();
             return e.getMessage();
         }
+    }
+
+    public String saveImage(MultipartFile image, Item item){
+        Photo photo = new Photo();
+        photo.setItem(item);
+        photo.setFilename(image.getOriginalFilename());
+        photo.setTimestamp_created(new Date());
+        photo.setTimestamp_edited(new Date());
+        photoRepository.save(photo);
+
+        if (!image.isEmpty()) {
+            try {
+                // Ensure the directory exists
+                Path uploadPath = Paths.get(photoFolderPath);
+                if (!Files.exists(uploadPath)) {
+                    Files.createDirectories(uploadPath);
+                }
+
+                // Save the image to the filesystem
+                String imageName = image.getOriginalFilename();
+                Path filePath = uploadPath.resolve(imageName);
+                Files.write(filePath, image.getBytes());
+
+                System.out.println("Uploaded image saved to: " + filePath.toString());
+
+                return "Item created successfully! Image saved to " + filePath.toString();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Failed to save the image!";
+            }
+        }
+        return "Image is empty";
     }
 }

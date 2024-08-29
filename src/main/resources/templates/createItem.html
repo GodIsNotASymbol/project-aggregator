@@ -2,12 +2,22 @@
 <html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
 <script>
     function saveInput(){
-            var title = $("#title").val();  // Get the value from the textarea
-            var description = $("#description").val()
+            var formData = new FormData();
+
+            var title = $("#title").val();
+            var description = $("#description").val();
+            formData.append("title", title);
+            formData.append("description", description);
+
+            var fileInput = $("#image")[0].files[0];
+            formData.append("image", fileInput);
+
             // If I omit, the POST will be to the same url
             $.ajax({
                 type: "POST",
-                data: { title: title, description: description },
+                data: formData,
+                contentType: false,
+                processData: false,
                 success: function(response) {
                     console.log(response); // handle the server response
                 },
@@ -26,6 +36,9 @@
         <div class="row">
             <div class="col-sm">Description</div>
             <textarea type="text" id="description" rows="4" cols="30" placeholder="Write the item's description"></textarea>
+        </div>
+        <div class="row">
+            <input type="file" id="image">
         </div>
         <button onclick="saveInput()">Submit</button>
     </div>
