@@ -79,8 +79,6 @@ public class MainController {
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("mainPage");
-        model.addAttribute("Title", "Marinabi");
-        model.addAttribute("Sidebar_desc", "Marinabi");
         model.addAttribute("Items", all_item_dtos);
         model.addAttribute("PageNumbers", pageNumbers);
         return mav;
@@ -106,8 +104,7 @@ public class MainController {
     public ModelAndView headertemplate(Model model, @RequestParam Integer item){
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("");
-        model.addAttribute("Test", "thymeleaf replace");
+        mav.setViewName("viewItem");
         return mav;
     }
 }
