@@ -29,7 +29,8 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Implementar el controller PostMapping que guarde el valor de textarea en item description y title en la tabla item
+- Evitar que se guarde cualquier cosa si no se sube una foto
+- Hacer que la pagina del create use una Form en vez de cosas sueltas
 - Implementar pagina del create
 - Implementar pagina del edit
 - Implementar Login, autenticacion y autorizacion
@@ -41,6 +42,8 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Implementar subir y guardar la foto en el sistema en la carpeta uploads/photos, y hacer la entidad relacionada al item correspondiente
+- Implementar el controller PostMapping que guarde el valor de textarea en item description y title en la tabla item
 - Implementar la ajax call que tome el valor de la textarea y del input, y lo pase al controller PostMapping
 - Agregar un <a> que lleve a la pagina de donde se clickeo, desde el viewItem
 - Agregar al titulo e imagenes de la pagina principal un link que los lleve a la pagina particular, y una manito que muestre que puede ser asi
