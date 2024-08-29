@@ -3,5 +3,6 @@ CREATE TABLE item (
     description TEXT,
     created_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     last_edit_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deleted_date DATETIME
+    deleted_date DATETIME,
+    title VARCHAR(255)
 );
