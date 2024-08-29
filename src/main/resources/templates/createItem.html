@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
+<script>
+    function saveInput(){
+            var title = $("#title").val();  // Get the value from the textarea
+            var description = $("#description").val()
+            // If I omit, the POST will be to the same url
+            $.ajax({
+                type: "POST",
+                data: { title: title, description: description },
+                success: function(response) {
+                    console.log(response); // handle the server response
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error: " + error); // handle any error
+                }
+            });
+    }
+</script>
+<div class="main_page container">
+    <div class="inner-frame">
+        <div class="row">
+            <div class="col-sm">Title</div>
+            <input type="text" id="title" placeholder="Item's title">
+        </div>
+        <div class="row">
+            <div class="col-sm">Description</div>
+            <textarea type="text" id="description" rows="4" cols="30" placeholder="Write the item's description"></textarea>
+        </div>
+        <button onclick="saveInput()">Submit</button>
+    </div>
+
+</div>

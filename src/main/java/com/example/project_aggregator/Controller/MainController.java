@@ -13,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -61,6 +62,14 @@ public class MainController {
         return res;
     }
 
+    // -------------CONTROLLERS--------------
+
+    @GetMapping("/")
+    public RedirectView redirect(){
+        String url = "/mainPage?page=1";
+        return new RedirectView(url);
+    }
+
     @GetMapping("/mainPage")
     public ModelAndView mainPage(@RequestParam Integer page, Model model){
         // page is just the page number
@@ -87,13 +96,6 @@ public class MainController {
         return mav;
     }
 
-
-    @GetMapping("/")
-    public RedirectView redirect(){
-        String url = "/mainPage?page=1";
-        return new RedirectView(url);
-    }
-
     @GetMapping("/login")
     public ModelAndView login(Model model){
 
@@ -104,7 +106,7 @@ public class MainController {
     }
 
     @GetMapping("/viewItem")
-    public ModelAndView headertemplate(HttpServletRequest request, Model model, @RequestParam Integer item){
+    public ModelAndView viewItem(HttpServletRequest request, Model model, @RequestParam Integer item){
 
         String referrer = request.getHeader("Referer");
 
@@ -118,6 +120,22 @@ public class MainController {
         model.addAttribute("description", itemFound.getDescription());
         model.addAttribute("backButtonSrc", referrer);
 
+        return mav;
+    }
+
+    @GetMapping("/createItem")
+    public ModelAndView createItemGet(HttpServletRequest request, Model model){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("createItem");
+        return mav;
+    }
+
+    @PostMapping("/createItem")
+    public ModelAndView createItemPost(HttpServletRequest request, Model model
+            , @RequestParam("title") String title, @RequestParam("description") String description){
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("createItem");
         return mav;
     }
 }
