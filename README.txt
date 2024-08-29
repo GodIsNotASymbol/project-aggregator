@@ -29,23 +29,22 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Cambiar los nombres de las fotos en la base de datos a butterfly.jpeg
-- Crear mainPageItemDto que tenga todo lo necesario para mostrar en la pagina principal-> Titulo, Foto
-- asegurarse que no queden rezagos del hardcodeo que hice antes sobre los titulos y las fotos
-- Alterar la pagina principal como para que muestre las fotos en los encuadres
-- Alterar la main page como para que cuando se presione un titulo, se lleve a la pagina grande de lo que se eligio
-- Hacer paginado para la pagina principal
-- Definir cantidad de items por pagina
-- Hacer modal cuando se aprieta el item, sin difuminacion gris
-- Hacer la difuminacion gris con el modal, y que se pueda cerrar
+- Crear una pagina especifica por item, hacer un controller. Tiene que tener el titulo, foto y descripcion del item, y un <a> que lleve a la pagina de donde se clickeo
+- Agregar al titulo e imagenes de la pagina principal un link que los lleve a la pagina particular, y una manito que muestre que puede ser asi
+- Implementar pagina del create
+- Implementar pagina del edit
 - Implementar Login, autenticacion y autorizacion
-- Implementar pagina del edit, solo se puede acceder con Rol admin
+- Implementar que las paginas de edit y create solo se puede acceder con Rol admin
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
 - Como hacer para hacerla mas linda la pagina web?
 - Como hago para publicar y abrir a la web la IP y el puerto? Puedo hacerlo con un google cloud gratis??? O amazon gratis???
-
+MAYBE:
+- Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Crear mainPageItemDto que tenga todo lo necesario para mostrar en la pagina principal-> Titulo, Foto
+- asegurarse que no queden rezagos del hardcodeo que hice antes sobre los titulos y las fotos
+- Cambiar los nombres de las fotos en la base de datos a butterfly.jpeg
 - Cambiar item que el tipo de description sea el correcto, y agregar tambien title varchar 255
 - Remover la descripcion en la pagina principal
 - Usar un service para levantar las fotos de la carpeta uploads/photos, y devolverlas como base64
