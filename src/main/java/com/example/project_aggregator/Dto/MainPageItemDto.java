@@ -6,6 +6,8 @@ public class MainPageItemDto {
 
     private String base64Image;
 
+    private String redirectView;
+
     public String getTitle() {
         return title;
     }
@@ -20,5 +22,13 @@ public class MainPageItemDto {
 
     public void setBase64Image(String base64Image) {
         this.base64Image = base64Image;
+    }
+
+    public String getRedirectView() {
+        return redirectView;
+    }
+
+    public void setRedirectView(String redirectView) {
+        this.redirectView = redirectView;
     }
 }

@@ -6,10 +6,10 @@
             <div class="col-md">
                 <div id="photo1" class="col-sm">
                     <div class="row flex-center">
-                        <h3 th:text="${item.title}">Title</h3>
+                        <a th:href="${item.redirectView}"><h3 th:text="${item.title}">Title</h3></a>
                     </div>
                     <div class="row flex-center">
-                        <img th:src="${item.base64Image}" alt="Base64 Image">
+                        <a th:href="${item.redirectView}"><img th:src="${item.base64Image}" alt="Base64 Image"></a>
                     </div>
                 </div>
             </div>

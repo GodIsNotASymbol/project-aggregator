@@ -6,6 +6,7 @@ import com.example.project_aggregator.entity.Item;
 import com.example.project_aggregator.entity.Photo;
 import com.example.project_aggregator.repository.ItemRepository;
 import com.example.project_aggregator.service.PhotoService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -53,6 +54,7 @@ public class MainController {
             MainPageItemDto dto = new MainPageItemDto();
             dto.setTitle(item.getTitle());
             String base64image = this.photoService.retrievePhotoBase64ForItem(item);
+            dto.setRedirectView("/viewItem?item="+item.getId());
             dto.setBase64Image(base64image);
             res.add(dto);
         }
@@ -102,7 +104,9 @@ public class MainController {
     }
 
     @GetMapping("/viewItem")
-    public ModelAndView headertemplate(Model model, @RequestParam Integer item){
+    public ModelAndView headertemplate(HttpServletRequest request, Model model, @RequestParam Integer item){
+
+        String referrer = request.getHeader("Referer");
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("viewItem");
@@ -112,6 +116,7 @@ public class MainController {
         model.addAttribute("title", itemFound.getTitle());
         model.addAttribute("base64Image", base64Image);
         model.addAttribute("description", itemFound.getDescription());
+        model.addAttribute("backButtonSrc", referrer);
 
         return mav;
     }
