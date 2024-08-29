@@ -29,8 +29,8 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Crear una pagina especifica por item, hacer un controller. Tiene que tener el titulo, foto y descripcion del item, y un <a> que lleve a la pagina de donde se clickeo
 - Agregar al titulo e imagenes de la pagina principal un link que los lleve a la pagina particular, y una manito que muestre que puede ser asi
+- Agregar un <a> que lleve a la pagina de donde se clickeo, desde el viewItem
 - Implementar pagina del create
 - Implementar pagina del edit
 - Implementar Login, autenticacion y autorizacion
@@ -42,6 +42,7 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Crear una pagina especifica por item, hacer un controller. Tiene que tener el titulo, foto y descripcion del item, 
 - Crear mainPageItemDto que tenga todo lo necesario para mostrar en la pagina principal-> Titulo, Foto
 - asegurarse que no queden rezagos del hardcodeo que hice antes sobre los titulos y las fotos
 - Cambiar los nombres de las fotos en la base de datos a butterfly.jpeg
