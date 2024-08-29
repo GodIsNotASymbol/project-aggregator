@@ -6,10 +6,10 @@
             <div class="col-md">
                 <div id="photo1" class="col-sm">
                     <div class="row flex-center">
-                        <h3 th:text="${PhotoTitle}">Title</h3>
+                        <h3 th:text="${item.title}">Title</h3>
                     </div>
                     <div class="row flex-center">
-                        <img th:src="${PhotoBase64}" alt="Base64 Image">
+                        <img th:src="${item.base64Image}" alt="Base64 Image">
                     </div>
                 </div>
             </div>

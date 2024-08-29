@@ -1,5 +1,6 @@
 package com.example.project_aggregator.Controller;
 
+import com.example.project_aggregator.Dto.MainPageItemDto;
 import com.example.project_aggregator.Dto.PageNumberDto;
 import com.example.project_aggregator.entity.Item;
 import com.example.project_aggregator.entity.Photo;
@@ -44,6 +45,19 @@ public class MainController {
         return res;
     }
 
+    private List<MainPageItemDto> makeMainPageItemDtosFromItems(List<Item> all_items){
+        List<MainPageItemDto> res = new ArrayList<>();
+        for(int i=0;i<all_items.size();i++){
+            Item item = all_items.get(i);
+            MainPageItemDto dto = new MainPageItemDto();
+            dto.setTitle(item.getTitle());
+            String base64image = this.photoService.retrievePhotoBase64ForItem(item);
+            dto.setBase64Image(base64image);
+            res.add(dto);
+        }
+        return res;
+    }
+
     @GetMapping("/mainPage")
     public ModelAndView mainPage(@RequestParam Integer page, Model model){
         // page is just the page number
@@ -61,7 +75,7 @@ public class MainController {
         List<PageNumberDto> pageNumbers = makePageNumberDtoList(numberOfPages);
 
         // Make mainPageItemDtos for showing Title and photo on the main page
-        String base64Image = this.photoService.retrievePhotoBase64ForItem(all_items.getContent().get(0));
+        List<MainPageItemDto> all_item_dtos = makeMainPageItemDtosFromItems(all_items.getContent());
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("mainPage");
@@ -88,10 +102,11 @@ public class MainController {
         return mav;
     }
 
-    @GetMapping("/headertemplate")
-    public ModelAndView headertemplate(Model model){
+    @GetMapping("/viewItem")
+    public ModelAndView headertemplate(Model model, @RequestParam Integer item){
+
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("HeaderAndSidebarTemplate");
+        mav.setViewName("");
         model.addAttribute("Test", "thymeleaf replace");
         return mav;
     }
