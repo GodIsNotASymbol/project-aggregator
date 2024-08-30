@@ -2,11 +2,10 @@ package com.example.project_aggregator.Controller;
 
 import com.example.project_aggregator.Dto.MainPageItemDto;
 import com.example.project_aggregator.Dto.PageNumberDto;
-import com.example.project_aggregator.entity.Item;
-import com.example.project_aggregator.entity.Photo;
-import com.example.project_aggregator.repository.ItemRepository;
-import com.example.project_aggregator.repository.PhotoRepository;
-import com.example.project_aggregator.service.PhotoService;
+import com.example.project_aggregator.Entity.Item;
+import com.example.project_aggregator.Repository.ItemRepository;
+import com.example.project_aggregator.Repository.PhotoRepository;
+import com.example.project_aggregator.Service.PhotoService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -102,7 +101,7 @@ public class MainController {
         return mav;
     }
 
-    @GetMapping("/login")
+    @GetMapping("/testlogintest")
     public ModelAndView login(Model model){
 
         ModelAndView mav = new ModelAndView();
@@ -129,7 +128,7 @@ public class MainController {
         return mav;
     }
 
-    @GetMapping("/createItem")
+    @GetMapping("/testtesttest")
     public ModelAndView createItemGet(HttpServletRequest request, Model model){
         ModelAndView mav = new ModelAndView();
         mav.setViewName("createItem");
