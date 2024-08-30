@@ -29,10 +29,9 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Hacer que en la view del item no se pase el max width ni el max height
-- Hacer que la pagina del create use una Form en vez de cosas sueltas
-- Implementar pagina del edit
 - Implementar Login, autenticacion y autorizacion
+- Implementar pagina de login, implementar roles, que roles pueden ver que paginas
+- Implementar pagina del edit --> que aparezca un boton en la view del item solo si estoy loggeado, y que me lleve a la pagina del edit
 - Implementar que las paginas de edit y create solo se puede acceder con Rol admin
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
@@ -41,6 +40,8 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Hacer que la pagina del create use una Form en vez de cosas sueltas
+- Hacer que en la view del item no se pase el max width ni el max height
 - Evitar que se guarde cualquier cosa si no se sube una foto
 - Implementar subir y guardar la foto en el sistema en la carpeta uploads/photos, y hacer la entidad relacionada al item correspondiente
 - Implementar el controller PostMapping que guarde el valor de textarea en item description y title en la tabla item
