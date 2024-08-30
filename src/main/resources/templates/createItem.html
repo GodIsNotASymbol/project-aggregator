@@ -3,13 +3,24 @@
 <script>
     function saveInput(){
             var formData = new FormData();
-
             var title = $("#title").val();
             var description = $("#description").val();
+            if( title == "" ){
+                alert("Please add a title")
+                return;
+            }
+            if( description == "" ){
+                alert("Please add a description")
+                return;
+            }
             formData.append("title", title);
             formData.append("description", description);
 
             var fileInput = $("#image")[0].files[0];
+            if( fileInput === undefined ){
+                alert("Please upload an image");
+                return;
+            }
             formData.append("image", fileInput);
 
             // If I omit, the POST will be to the same url
