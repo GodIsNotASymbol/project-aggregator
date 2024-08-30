@@ -1,6 +1,6 @@
-package com.example.project_aggregator.repository;
+package com.example.project_aggregator.Repository;
 
-import com.example.project_aggregator.entity.Item;
+import com.example.project_aggregator.Entity.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

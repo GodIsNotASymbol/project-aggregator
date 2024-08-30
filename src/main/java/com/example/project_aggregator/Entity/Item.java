@@ -1,4 +1,4 @@
-package com.example.project_aggregator.entity;
+package com.example.project_aggregator.Entity;
 
 import jakarta.persistence.*;
 

@@ -1,8 +1,8 @@
-package com.example.project_aggregator.service;
+package com.example.project_aggregator.Service;
 
-import com.example.project_aggregator.entity.Item;
-import com.example.project_aggregator.entity.Photo;
-import com.example.project_aggregator.repository.PhotoRepository;
+import com.example.project_aggregator.Entity.Item;
+import com.example.project_aggregator.Entity.Photo;
+import com.example.project_aggregator.Repository.PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
