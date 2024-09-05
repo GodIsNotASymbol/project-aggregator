@@ -29,7 +29,7 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- finish Spring Boot Security - Users & Roles video
+- Spring Boot Security - UserDetailsService & AuthenticationManager VIDEO
 - Implementar Login, autenticacion y autorizacion
 - Implementar pagina de login, implementar roles, que roles pueden ver que paginas
 - Implementar pagina del edit --> que aparezca un boton en la view del item solo si estoy loggeado, y que me lleve a la pagina del edit
@@ -41,6 +41,7 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- finish Spring Boot Security - Users & Roles video
 - Hacer que la pagina del create use una Form en vez de cosas sueltas
 - Hacer que en la view del item no se pase el max width ni el max height
 - Evitar que se guarde cualquier cosa si no se sube una foto
