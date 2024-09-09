@@ -29,7 +29,7 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Spring Boot Security - UserDetailsService & AuthenticationManager VIDEO
+- Login video
 - Implementar Login, autenticacion y autorizacion
 - Implementar pagina de login, implementar roles, que roles pueden ver que paginas
 - Implementar pagina del edit --> que aparezca un boton en la view del item solo si estoy loggeado, y que me lleve a la pagina del edit
