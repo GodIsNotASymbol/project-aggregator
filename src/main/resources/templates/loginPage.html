@@ -1,5 +1,57 @@
 <!DOCTYPE html>
 <html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
-<div class="main_page">
-    <div></div>
+<script>
+    function loginSubmit(){
+            var formData = new FormData();
+            var username = $("#username").val();
+            var password = $("#password").val();
+            if( username == "" ){
+                alert("Username required")
+                return;
+            }
+            if( password == "" ){
+                alert("Password required")
+                return;
+            }
+            formData.append("username", username);
+            formData.append("password", password);
+
+            $.ajax({
+                url: "/api/auth/login"
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    alert(response);
+                    console.log(response); // handle the server response
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error: " + error); // handle any error
+                    alert("Error: "+error)
+                }
+            });
+    }
+</script>
+<div class="main_page container">
+    <div class="inner-frame">
+        <div class="row">
+            <div class="col-sm">Username</div>
+            <div class="col-sm">
+                <input type="text" id="username" placeholder="username">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Password</div>
+            <div class="col-sm">
+                <input type="text" id="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="row">
+            <button onclick="loginSubmit()">Login</button>
+        </div>
+    </div>
+
 </div>
+</body>
+</html>
