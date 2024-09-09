@@ -1,5 +1,6 @@
 package com.example.project_aggregator.Controller;
 
+import com.example.project_aggregator.Dto.LoginDto;
 import com.example.project_aggregator.Entity.Role;
 import com.example.project_aggregator.Entity.UserEntity;
 import com.example.project_aggregator.Repository.RoleRepository;
@@ -8,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 
@@ -54,7 +55,10 @@ public class AuthController {
 
 
     @PostMapping("/login")
-    /*public ResponseEntity<String> login(){
-
-    }*/
+    public ResponseEntity<String> login(@RequestBody LoginDto loginDto){
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword());
+        Authentication authentication = authenticationManager.authenticate(token);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        return new ResponseEntity<>("User signed in Success", HttpStatus.OK);
+    }
 }
