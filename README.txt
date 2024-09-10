@@ -29,9 +29,9 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- make login page
-- Implementar Login, autenticacion y autorizacion
-- Implementar pagina de login, implementar roles, que roles pueden ver que paginas
+- make login page:
+- login page has to have username and password fields managed and connected to the backend by a submit button and a post request
+- After the submit button has been pressed, there must be a redirect to a page that has create and edit
 - Implementar pagina del edit --> que aparezca un boton en la view del item solo si estoy loggeado, y que me lleve a la pagina del edit
 - Implementar que las paginas de edit y create solo se puede acceder con Rol admin
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
@@ -41,6 +41,8 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Implementar Login, autenticacion y autorizacion
+- Implementar pagina de login, implementar roles, que roles pueden ver que paginas
 - LOgin backend video
 - Register video
 - finish Spring Boot Security - Users & Roles video
