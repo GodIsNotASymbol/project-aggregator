@@ -37,7 +37,7 @@ public class AuthController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/register")
+    @PostMapping("/register")
     public ResponseEntity<String> register(){
         if(userRepository.existsByUsername("admin")){
             return new ResponseEntity<>("Error", HttpStatus.FORBIDDEN);
@@ -54,11 +54,11 @@ public class AuthController {
     }
 
 
-    @PostMapping("/login")
+    /*@PostMapping("/loginUser")
     public ResponseEntity<String> login(@RequestBody LoginDto loginDto){
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword());
         Authentication authentication = authenticationManager.authenticate(token);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         return new ResponseEntity<>("User signed in Success", HttpStatus.OK);
-    }
+    }*/
 }

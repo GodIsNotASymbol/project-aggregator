@@ -128,12 +128,12 @@ public class MainController {
         return mav;
     }
 
-    @GetMapping("/testtesttest")
-    public ModelAndView createItemGet(HttpServletRequest request, Model model){
+    /*@GetMapping("/loginPage")
+    public ModelAndView loginPage(HttpServletRequest request, Model model){
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("createItem");
+        mav.setViewName("loginPage");
         return mav;
-    }
+    }*/
 
     @PostMapping("/createItem")
     public ModelAndView createItemPost(HttpServletRequest request, Model model

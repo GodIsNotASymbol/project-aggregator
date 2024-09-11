@@ -15,9 +15,9 @@
             }
             formData.append("username", username);
             formData.append("password", password);
-
+            debugger;
             $.ajax({
-                url: "/api/auth/login"
+                url: "/api/auth/loginUser",
                 type: "POST",
                 data: formData,
                 contentType: false,
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-sm">Password</div>
             <div class="col-sm">
-                <input type="text" id="password" placeholder="Password">
+                <input type="password" id="password" placeholder="Password">
             </div>
         </div>
         <div class="row">

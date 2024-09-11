@@ -28,6 +28,7 @@ public class SecurityConfiguration  {
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        //http.csrf().disable();
         return http
                 .authorizeHttpRequests(
                         authorizeHttp -> {
@@ -35,15 +36,18 @@ public class SecurityConfiguration  {
                             authorizeHttp.requestMatchers("/mainPage").permitAll();
                             authorizeHttp.requestMatchers("/viewItem").permitAll();
                             authorizeHttp.requestMatchers("/styles.css").permitAll();
-                            authorizeHttp.requestMatchers("/api/auth/**").permitAll();
+                            /*authorizeHttp.requestMatchers("/api/auth/register").permitAll();
+                            authorizeHttp.requestMatchers("/api/auth/loginUser").permitAll();
+                            authorizeHttp.requestMatchers("/loginPage").permitAll();*/
                             authorizeHttp.anyRequest().authenticated();
                         }
                 )
                 .formLogin(l -> l.defaultSuccessUrl("/createItem"))
+                .csrf().disable()
                 .logout(l -> l.logoutSuccessUrl("/"))
                 .build();
     }
-
+    
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
         return authenticationConfiguration.getAuthenticationManager();
