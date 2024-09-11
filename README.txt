@@ -29,8 +29,6 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- make login page:
-- login page has to have username and password fields managed and connected to the backend by a submit button and a post request
 - After the submit button has been pressed, there must be a redirect to a page that has create and edit
 - Implementar pagina del edit --> que aparezca un boton en la view del item solo si estoy loggeado, y que me lleve a la pagina del edit
 - Implementar que las paginas de edit y create solo se puede acceder con Rol admin
@@ -41,6 +39,9 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- login page has to have username and password fields managed and connected to the backend by a submit button and a post request [CANCELED]
+- Use the out of the box spring boot authentication [MASOMENOS, parece que usa el user y pass de la base de datos]
+- make login page: Why doesn't it work? Input into chatGPT the following... [CANCELED]
 - Implementar Login, autenticacion y autorizacion
 - Implementar pagina de login, implementar roles, que roles pueden ver que paginas
 - LOgin backend video
