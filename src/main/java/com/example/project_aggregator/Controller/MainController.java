@@ -56,6 +56,17 @@ public class MainController {
         return res;
     }
 
+    private List<PageNumberDto> makePageNumberDtoListForCreateAndEditPage(int numberOfPages){
+        List<PageNumberDto> res = new ArrayList<>();
+        for(int i=1;i<=numberOfPages;i++){
+            PageNumberDto pageDto = new PageNumberDto();
+            pageDto.number = i;
+            pageDto.redirectUrl = "createAndEditPage?page="+i;
+            res.add(pageDto);
+        }
+        return res;
+    }
+
     private List<MainPageItemDto> makeMainPageItemDtosFromItems(List<Item> all_items){
         List<MainPageItemDto> res = new ArrayList<>();
         for(int i=0;i<all_items.size();i++){
@@ -134,7 +145,7 @@ public class MainController {
         if (allItemsSize % pageSize != 0){
             numberOfPages += 1;
         }
-        List<PageNumberDto> pageNumbers = makePageNumberDtoList(numberOfPages);
+        List<PageNumberDto> pageNumbers = makePageNumberDtoListForCreateAndEditPage(numberOfPages);
 
         // Make mainPageItemDtos for showing Title and photo on the main page
         List<MainPageItemDto> all_item_dtos = makeCreateAndEditItemDtosFromItems(all_items.getContent());
