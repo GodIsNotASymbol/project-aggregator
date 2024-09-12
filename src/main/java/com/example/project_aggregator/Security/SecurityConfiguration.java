@@ -42,7 +42,7 @@ public class SecurityConfiguration  {
                             authorizeHttp.anyRequest().authenticated();
                         }
                 )
-                .formLogin(l -> l.defaultSuccessUrl("/createItem"))
+                .formLogin(l -> l.defaultSuccessUrl("/createAndEditPage?page=1"))
                 .csrf().disable()
                 .logout(l -> l.logoutSuccessUrl("/"))
                 .build();

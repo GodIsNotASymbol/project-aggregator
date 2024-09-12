@@ -70,6 +70,20 @@ public class MainController {
         return res;
     }
 
+    private List<MainPageItemDto> makeCreateAndEditItemDtosFromItems(List<Item> all_items){
+        List<MainPageItemDto> res = new ArrayList<>();
+        for(int i=0;i<all_items.size();i++){
+            Item item = all_items.get(i);
+            MainPageItemDto dto = new MainPageItemDto();
+            dto.setTitle(item.getTitle());
+            String base64image = this.photoService.retrievePhotoBase64ForItem(item);
+            dto.setRedirectView("/editItem?item="+item.getId());
+            dto.setBase64Image(base64image);
+            res.add(dto);
+        }
+        return res;
+    }
+
     // -------------CONTROLLERS--------------
 
     @GetMapping("/")
@@ -104,12 +118,31 @@ public class MainController {
         return mav;
     }
 
-    @GetMapping("/testlogintest")
-    public ModelAndView login(Model model){
+    @GetMapping("/createAndEditPage")
+    public ModelAndView createAndEditPage(@RequestParam(value = "page", required = false) Integer page, Model model){
+        // page is just the page number
+        if(page == null){page = 1;}
+        int pageIndex = page-1;
+        int pageSize = 3;
+        Pageable pageWithThreeElements = PageRequest.of(pageIndex,pageSize);
+        Page<Item> all_items = itemRepository.findAll(pageWithThreeElements);
+
+        // Calculate the number of pages to make the bootstrap page selector
+        int allItemsSize = itemRepository.findAll().size();
+        int numberOfPages = (int) Math.floor(allItemsSize/pageSize);
+        if (allItemsSize % pageSize != 0){
+            numberOfPages += 1;
+        }
+        List<PageNumberDto> pageNumbers = makePageNumberDtoList(numberOfPages);
+
+        // Make mainPageItemDtos for showing Title and photo on the main page
+        List<MainPageItemDto> all_item_dtos = makeCreateAndEditItemDtosFromItems(all_items.getContent());
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("loginPage");
-        model.addAttribute("Test", "thymeleaf replace");
+        mav.setViewName("createAndEditPage");
+        model.addAttribute("Items", all_item_dtos);
+        model.addAttribute("PageNumbers", pageNumbers);
+        model.addAttribute("createItemUrl", "/createItem");
         return mav;
     }
 
