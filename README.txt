@@ -29,7 +29,7 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Hacer pagina editItem, que tenga todos los campos titulo, descripcion e imagen para editarse
+- // TODO Must delete the old photo for the item edition before publishing the new one
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
 - Investigar como hacer para que sea linda la pagina web
@@ -37,6 +37,7 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Hacer pagina editItem, que tenga todos los campos titulo, descripcion e imagen para editarse
 - La pagina del create tiene que tener un boton back
 - Si pongo la pagina createAndEdit sin nada, tiene que redireccionar a la que tiene ?page=1
 - After the login button has been pressed, there must be a redirect to a page that has create and edit --> called create&Edit
