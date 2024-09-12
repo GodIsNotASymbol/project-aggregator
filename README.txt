@@ -29,9 +29,9 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- After the submit button has been pressed, there must be a redirect to a page that has create and edit --> called create&Edit
-- Hacer pagina view&Edit, que sea muy parecida a la main page pero que tenga un boton de edit.
-- Implementar pagina del edit --> que aparezca un boton en la view del item solo si estoy loggeado, y que me lleve a la pagina del edit
+- Si pongo la pagina createAndEdit sin nada, tiene que redireccionar a la que tiene ?page=1
+- La pagina del create tiene que tener un boton back
+- Hacer pagina editItem, que tenga todos los campos titulo, descripcion e imagen para editarse
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
 - Investigar como hacer para que sea linda la pagina web
@@ -39,6 +39,7 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- After the login button has been pressed, there must be a redirect to a page that has create and edit --> called create&Edit
 - Implementar que las paginas de edit y create solo se puede acceder con Rol admin 
 - login page has to have username and password fields managed and connected to the backend by a submit button and a post request [CANCELED]
 - Use the out of the box spring boot authentication [MASOMENOS, parece que usa el user y pass de la base de datos]
