@@ -119,7 +119,8 @@ public class MainController {
     }
 
     @GetMapping("/createAndEditPage")
-    public ModelAndView createAndEditPage(@RequestParam(value = "page", required = false) Integer page, Model model){
+    public ModelAndView createAndEditPage(HttpServletRequest request,  Model model,
+                                          @RequestParam(value = "page", required = false) Integer page){
         // page is just the page number
         if(page == null){page = 1;}
         int pageIndex = page-1;
@@ -143,6 +144,8 @@ public class MainController {
         model.addAttribute("Items", all_item_dtos);
         model.addAttribute("PageNumbers", pageNumbers);
         model.addAttribute("createItemUrl", "/createItem");
+
+
         return mav;
     }
 
@@ -175,6 +178,8 @@ public class MainController {
     public ModelAndView createItemGet(HttpServletRequest request, Model model){
         ModelAndView mav = new ModelAndView();
         mav.setViewName("createItem");
+        String referrer = request.getHeader("Referer");
+        model.addAttribute("backButtonSrc", referrer);
         return mav;
     }
 
