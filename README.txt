@@ -30,6 +30,7 @@ Aplicacion web:
 
 -----TODO(Pagina aggregator)-----------------------------------
 - Poner en la barra un boton que cambie de mainPageView a editItemView
+- Poner en la sidebar lo que se desea: el ig, el boton mainPage-->editPage el contacto de whatsapp.
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
 - Investigar como hacer para que sea linda la pagina web
