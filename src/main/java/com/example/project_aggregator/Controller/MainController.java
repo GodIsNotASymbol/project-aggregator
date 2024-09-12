@@ -203,4 +203,40 @@ public class MainController {
 
         return new ResponseEntity<>("Item created success", HttpStatus.OK);
     }
+
+    @GetMapping("/editItem")
+    public ModelAndView editItemGet(HttpServletRequest request, Model model, @RequestParam Integer item){
+
+        List<Integer> idlist = Arrays.asList(item);
+        Item itemFound = this.itemRepository.findAllById(idlist).get(0);
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("editItem");
+        String referrer = request.getHeader("Referer");
+        model.addAttribute("backButtonSrc", referrer);
+        model.addAttribute("itemId", itemFound.getId());
+        return mav;
+    }
+
+    @PostMapping("/editItem")
+    public ResponseEntity<String> editItemPost(HttpServletRequest request, Model model
+            , @RequestParam("title") String title
+            , @RequestParam("description") String description
+            , @RequestParam("image") MultipartFile image
+            , @RequestParam("item") Integer itemId){
+        if (!image.isEmpty()) {
+            Item item = itemRepository.findById(itemId).get();
+            item.setTitle(title);
+            item.setDescription(description);
+            item.setLast_edit_date(new Date());
+            itemRepository.save(item);
+
+            // TODO Must delete the old photo for the item first
+            String success = this.photoService.saveImage(image, item);
+        } else {
+            return new ResponseEntity<>("Please upload an image", HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>("Item edited success", HttpStatus.OK);
+    }
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
+<script>
+    function saveInput(){
+            var formData = new FormData();
+            var title = $("#title").val();
+            var description = $("#description").val();
+            var itemId = $("#itemId").val();
+            if( title == "" ){
+                alert("Please add a title")
+                return;
+            }
+            if( description == "" ){
+                alert("Please add a description")
+                return;
+            }
+            formData.append("title", title);
+            formData.append("description", description);
+            formData.append("item", itemId);
+
+            var fileInput = $("#image")[0].files[0];
+            if( fileInput === undefined ){
+                alert("Please upload an image");
+                return;
+            }
+            formData.append("image", fileInput);
+
+            // If I omit, the POST will be to the same url
+            $.ajax({
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    alert(response);
+                    console.log(response); // handle the server response
+                },
+                error: function(xhr, status, error) {
+                    alert("Error: "+error);
+                    console.error("Error: " + error); // handle any error
+                }
+            });
+    }
+</script>
+<div class="main_page container">
+    <div class="inner-frame">
+        <div class="row">
+            <a th:href="${backButtonSrc}" ><h3>BACK</h3></a>
+        </div>
+        <div class="row">
+            <div class="col-sm">Title</div>
+            <div class="col-sm">
+                <input type="text" id="title" placeholder="Item's title">
+                <input type="hidden" id="itemId" th:value="${itemId}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Description</div>
+            <div class="col-md">
+                <textarea type="text" id="description" rows="4" cols="30" placeholder="Write the item's description"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <input type="file" id="image">
+        </div>
+        <button onclick="saveInput()">Submit</button>
+    </div>
+
+</div>
+</body>
+</html>
