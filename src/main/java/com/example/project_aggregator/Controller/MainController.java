@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -135,8 +138,15 @@ public class MainController {
         return mav;
     }*/
 
+    @GetMapping("/createItem")
+    public ModelAndView createItemGet(HttpServletRequest request, Model model){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("createItem");
+        return mav;
+    }
+
     @PostMapping("/createItem")
-    public ModelAndView createItemPost(HttpServletRequest request, Model model
+    public ResponseEntity<String> createItemPost(HttpServletRequest request, Model model
             , @RequestParam("title") String title
             , @RequestParam("description") String description
             , @RequestParam("image") MultipartFile image){
@@ -149,10 +159,10 @@ public class MainController {
             itemRepository.save(item);
 
             String success = this.photoService.saveImage(image, item);
+        } else {
+            return new ResponseEntity<>("Please upload an image", HttpStatus.BAD_REQUEST);
         }
 
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("createItem");
-        return mav;
+        return new ResponseEntity<>("Item created success", HttpStatus.OK);
     }
 }
