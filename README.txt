@@ -29,6 +29,7 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
+- Poner en la barra un boton que cambie de mainPageView a editItemView
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
 - Investigar como hacer para que sea linda la pagina web
@@ -36,6 +37,7 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- poner edit al costado de los titulos en modo edicion [CANCELLED]
 - // TODO Must delete the old photo for the item edition before publishing the new one
 - Hacer pagina editItem, que tenga todos los campos titulo, descripcion e imagen para editarse
 - La pagina del create tiene que tener un boton back
