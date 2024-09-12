@@ -29,8 +29,6 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Si pongo la pagina createAndEdit sin nada, tiene que redireccionar a la que tiene ?page=1
-- La pagina del create tiene que tener un boton back
 - Hacer pagina editItem, que tenga todos los campos titulo, descripcion e imagen para editarse
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
@@ -39,6 +37,8 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- La pagina del create tiene que tener un boton back
+- Si pongo la pagina createAndEdit sin nada, tiene que redireccionar a la que tiene ?page=1
 - After the login button has been pressed, there must be a redirect to a page that has create and edit --> called create&Edit
 - Implementar que las paginas de edit y create solo se puede acceder con Rol admin 
 - login page has to have username and password fields managed and connected to the backend by a submit button and a post request [CANCELED]
