@@ -5,7 +5,7 @@
     text-decoration: none;
 }
 
-html, body {
+body {
     height:100%
     max-height: 100%; /* Ensure it’s at least the full height of the viewport */
     overflow-y: auto;
@@ -13,6 +13,14 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: lightgray;
+}
+
+html {
+    background-image: url('butterflies_background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%; /* Ensures the html element covers the full height of the page */
 }
 
 .header{
@@ -25,10 +33,14 @@ html, body {
 .inner_header{
     width: 60%;
     height: 100%;
-    display: block;
+    display: flex;
     /*background-color: red;*/
     margin: 0 auto;
     text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 400%;
 }
 
 .sidebar{
@@ -37,7 +49,7 @@ left: 0;
 width: 250px;
 height: 100%;
 /*display: block;*/
-background-color: #a3e3c4;
+background-color:  rgba(163, 227, 196, 0.75);
 }
 
 .main_page{
@@ -49,7 +61,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 /*background-color: #101010;*/
-background-color: lightgray;
 overflow: auto;
 overflow-y: auto;
 }
@@ -66,7 +77,6 @@ justify-content: center;
     width: 80%;
     height: auto;
     max-height:100%;
-    background-color: lightgray;
     padding: 5%;
     overflow: auto;
     overflow-y: auto;
