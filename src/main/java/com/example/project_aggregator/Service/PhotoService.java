@@ -84,4 +84,10 @@ public class PhotoService {
         }
         return "Image is empty";
     }
+
+    public String deleteImageForItem(Item item){
+        Photo photo = photoRepository.findByItem(item);
+        photoRepository.delete(photo);
+        return "End of method";
+    }
 }

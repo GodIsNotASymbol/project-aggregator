@@ -242,7 +242,7 @@ public class MainController {
             item.setLast_edit_date(new Date());
             itemRepository.save(item);
 
-            // TODO Must delete the old photo for the item first
+            this.photoService.deleteImageForItem(item);
             String success = this.photoService.saveImage(image, item);
         } else {
             return new ResponseEntity<>("Please upload an image", HttpStatus.BAD_REQUEST);
