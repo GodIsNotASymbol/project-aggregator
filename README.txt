@@ -96,6 +96,11 @@ MAYBE:
 
 
 
+------Project Agregator Description-------
+Project Aggregator is a private e-commerce/vlog webpage developed using the Java Spring Boot framework ecosystem.
+The technologies used to develop the webpage include: Spring Security, Spring Boot MVC, the Pebble template engine, Mysql, Docker, 
+Bootstrap.
+
 -----------------------------------------------------------------
 -----TODO (Web Dev):
 https://github.com/FoxtrotPotato/JavaRetooling/tree/main/Chicken%20Test
