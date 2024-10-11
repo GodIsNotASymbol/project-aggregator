@@ -6,6 +6,8 @@ import com.example.project_aggregator.Entity.Item;
 import com.example.project_aggregator.Repository.ItemRepository;
 import com.example.project_aggregator.Repository.PhotoRepository;
 import com.example.project_aggregator.Service.PhotoService;
+import io.pebbletemplates.pebble.PebbleEngine;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,11 +24,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class MainController {
@@ -104,7 +106,7 @@ public class MainController {
     }
 
     @GetMapping("/mainPage")
-    public ModelAndView mainPage(@RequestParam Integer page, Model model){
+    public String mainPage(@RequestParam Integer page, Model model) throws IOException {
         // page is just the page number
         int pageIndex = page-1;
         int pageSize = 3;
@@ -122,11 +124,18 @@ public class MainController {
         // Make mainPageItemDtos for showing Title and photo on the main page
         List<MainPageItemDto> all_item_dtos = makeMainPageItemDtosFromItems(all_items.getContent());
 
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("mainPage");
-        model.addAttribute("Items", all_item_dtos);
-        model.addAttribute("PageNumbers", pageNumbers);
-        return mav;
+
+        PebbleEngine engine = new PebbleEngine.Builder().build();
+        PebbleTemplate compiledTemplate = engine.getTemplate("templates/mainPage.html");
+
+        Map<String, Object> context = new HashMap<>();
+        context.put("Items", all_item_dtos);
+        context.put("PageNumbers", pageNumbers);
+
+        Writer writer = new StringWriter();
+        compiledTemplate.evaluate(writer, context);
+        String output = writer.toString();
+        return output;
     }
 
     @GetMapping("/createAndEditPage")
