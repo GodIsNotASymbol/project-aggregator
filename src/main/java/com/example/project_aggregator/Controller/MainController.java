@@ -205,12 +205,19 @@ public class MainController {
     }*/
 
     @GetMapping("/createItem")
-    public ModelAndView createItemGet(HttpServletRequest request, Model model){
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("createItem");
+    public String createItemGet(HttpServletRequest request, Model model) throws IOException{
+
+        PebbleEngine engine = new PebbleEngine.Builder().build();
+        PebbleTemplate compiledTemplate = engine.getTemplate("templates/createItem.html");
+
+        Map<String, Object> context = new HashMap<>();
         String referrer = request.getHeader("Referer");
-        model.addAttribute("backButtonSrc", referrer);
-        return mav;
+        context.put("backButtonSrc", referrer);
+
+        Writer writer = new StringWriter();
+        compiledTemplate.evaluate(writer, context);
+        String output = writer.toString();
+        return output;
     }
 
     @PostMapping("/createItem")

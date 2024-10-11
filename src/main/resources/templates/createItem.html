@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
+{% extends "templates/HeaderAndSidebarTemplate.html" %}
+
+{% block bodyContent %}
 <script>
     function saveInput(){
             var formData = new FormData();
@@ -64,5 +65,4 @@
     </div>
 
 </div>
-</body>
-</html>
+{% endblock %}
