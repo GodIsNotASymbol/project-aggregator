@@ -139,8 +139,8 @@ public class MainController {
     }
 
     @GetMapping("/createAndEditPage")
-    public ModelAndView createAndEditPage(HttpServletRequest request,  Model model,
-                                          @RequestParam(value = "page", required = false) Integer page){
+    public String createAndEditPage(HttpServletRequest request,  Model model,
+                                          @RequestParam(value = "page", required = false) Integer page) throws IOException {
         // page is just the page number
         if(page == null){page = 1;}
         int pageIndex = page-1;
@@ -159,32 +159,42 @@ public class MainController {
         // Make mainPageItemDtos for showing Title and photo on the main page
         List<MainPageItemDto> all_item_dtos = makeCreateAndEditItemDtosFromItems(all_items.getContent());
 
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("createAndEditPage");
-        model.addAttribute("Items", all_item_dtos);
-        model.addAttribute("PageNumbers", pageNumbers);
-        model.addAttribute("createItemUrl", "/createItem");
+        PebbleEngine engine = new PebbleEngine.Builder().build();
+        PebbleTemplate compiledTemplate = engine.getTemplate("templates/createAndEditPage.html");
 
+        Map<String, Object> context = new HashMap<>();
+        context.put("Items", all_item_dtos);
+        context.put("PageNumbers", pageNumbers);
+        context.put("createItemUrl", "/createItem");
 
-        return mav;
+        Writer writer = new StringWriter();
+        compiledTemplate.evaluate(writer, context);
+        String output = writer.toString();
+        return output;
     }
 
     @GetMapping("/viewItem")
-    public ModelAndView viewItem(HttpServletRequest request, Model model, @RequestParam Integer item){
+    public String viewItem(HttpServletRequest request, Model model, @RequestParam Integer item) throws IOException {
 
         String referrer = request.getHeader("Referer");
 
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("viewItem");
         List<Integer> idlist = Arrays.asList(item);
         Item itemFound = this.itemRepository.findAllById(idlist).get(0);
         String base64Image = this.photoService.retrievePhotoBase64ForItem(itemFound);
-        model.addAttribute("title", itemFound.getTitle());
-        model.addAttribute("base64Image", base64Image);
-        model.addAttribute("description", itemFound.getDescription());
-        model.addAttribute("backButtonSrc", referrer);
 
-        return mav;
+        PebbleEngine engine = new PebbleEngine.Builder().build();
+        PebbleTemplate compiledTemplate = engine.getTemplate("templates/viewItem.html");
+
+        Map<String, Object> context = new HashMap<>();
+        context.put("title", itemFound.getTitle());
+        context.put("base64Image", base64Image);
+        context.put("description", itemFound.getDescription());
+        context.put("backButtonSrc", referrer);
+
+        Writer writer = new StringWriter();
+        compiledTemplate.evaluate(writer, context);
+        String output = writer.toString();
+        return output;
     }
 
     /*@GetMapping("/loginPage")

@@ -1,31 +1,41 @@
-<!DOCTYPE html>
-<html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
+{% extends "templates/HeaderAndSidebarTemplate.html" %}
+
+{% block bodyContent %}
 <div class="main_page container">
     <div class="inner-frame">
         <div class="row flex-center">
-            <a th:href="${createItemUrl}">Create Item</a>
+            <a href={{ createItemUrl }}>Create Item</a>
         </div>
-        <div class="row" th:each="item: ${Items}" style="padding-bottom: 50px">
+        {% for item in Items %}
+        <div class="row" style="padding-bottom: 50px">
             <div class="col-md">
                 <div id="photo1" class="col-sm">
                     <div class="row flex-center">
-                        <a th:href="${item.redirectView}"><h3 th:text="${item.title}">Title</h3></a>
+                        <a href={{item.redirectView}}>
+                            <h3>{{item.title}}</h3>
+                        </a>
                     </div>
                     <div class="row flex-center">
-                        <a th:href="${item.redirectView}"><img th:src="${item.base64Image}" style="max-width: 300px; max-width: 300px" alt="Base64 Image"></a>
+                        <a href={{ item.redirectView }}>
+                            <img src={{ item.base64Image }} style="max-width: 300px; max-width: 300px" alt="Base64 Image">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
         <div class="row flex-center">
             <nav>
                 <ul class="pagination">
-                    <li class="page-item" th:each="page: ${PageNumbers}"><a class="page-link" th:href="${page.redirectUrl}" th:text="${page.number}"></a></li>
+                    {% for page in PageNumbers %}
+                    <li class="page-item">
+                        <a class="page-link" href={{ page.redirectUrl }}>{{ page.number }}</a>
+                    </li>
+                    {% endfor %}
                 </ul>
             </nav>
         </div>
     </div>
 
 </div>
-</body>
-</html>
+{% endblock %}

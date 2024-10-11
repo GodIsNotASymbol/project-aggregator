@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
+{% extends "templates/HeaderAndSidebarTemplate.html" %}
+
+{% block bodyContent %}
 <div class="main_page container">
     <!-- Here must come the back button ---->
     <div class="inner-frame">
-        <a th:href="${backButtonSrc}" ><h3>BACK</h3></a>
+        <a href={{ backButtonSrc }}><h3>BACK</h3></a>
         <div class="row"  style="padding-bottom: 20px">
             <div class="col-md">
                 <div id="photo1" class="col-sm">
                     <div class="row flex-center">
-                        <h3 th:text="${title}">Title</h3>
+                        <h3>{{ title }}</h3>
                     </div>
                     <div class="row flex-center">
-                        <img th:src="${base64Image}" style="max-width: 600px; max-height: 600px" alt="Base64 Image">
+                        <img src={{ base64Image }} style="max-width: 600px; max-height: 600px" alt="Base64 Image">
                     </div>
                     <div class="row flex-center">
-                        <p th:text="${description}" alt="Base64 Image"></p>
+                        <p alt="Base64 Image">{{ description }}</p>
                     </div>
                 </div>
             </div>
@@ -22,5 +23,4 @@
     </div>
 
 </div>
-</body>
-</html>
+{% endblock %}
