@@ -29,7 +29,6 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Reescribir todas las views como para que usen Pebble en vez de Thymeleaf
 - Poner en la barra un boton que cambie de mainPageView a editItemView
 - Poner en la sidebar lo que se desea: el ig, el boton mainPage-->editPage el contacto de whatsapp.
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
@@ -39,6 +38,7 @@ Aplicacion web:
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Reescribir todas las views como para que usen Pebble en vez de Thymeleaf
 - Cambiar la template engine de Thymeleaf a Pebble
 - poner edit al costado de los titulos en modo edicion [CANCELLED]
 - // TODO Must delete the old photo for the item edition before publishing the new one
