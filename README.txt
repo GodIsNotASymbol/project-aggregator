@@ -29,15 +29,15 @@ Aplicacion web:
 - Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
 
 -----TODO(Pagina aggregator)-----------------------------------
-- Poner en la barra un boton que cambie de mainPageView a editItemView
-- Poner en la sidebar lo que se desea: el ig, el boton mainPage-->editPage el contacto de whatsapp.
+- Como hago para publicar y abrir a la web la IP y el puerto? Explorar deploy en amazon web services
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
 - Investigar como hacer para que sea linda la pagina web
-- Como hago para publicar y abrir a la web la IP y el puerto? Puedo hacerlo con un google cloud gratis??? O amazon gratis???
+- Poner en la sidebar lo que se desea: el ig, el boton mainPage-->editPage el contacto de whatsapp. [DEFERRED]
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(Pagina aggregator)------------------------------------------
+- Poner en la barra un boton que cambie de mainPageView a editItemView [CANCELLED]
 - Reescribir todas las views como para que usen Pebble en vez de Thymeleaf
 - Cambiar la template engine de Thymeleaf a Pebble
 - poner edit al costado de los titulos en modo edicion [CANCELLED]
@@ -54,7 +54,7 @@ MAYBE:
 - Implementar pagina de login, implementar roles, que roles pueden ver que paginas
 - LOgin backend video
 - Register video
-- finish Spring Boot Security - Users & Roles video
+- finish Spring Boot Security - Users & Roles video https://youtu.be/YkA4cunsU9g?list=PL82C6-O4XrHe3sDCodw31GjXbwRdCyyuY
 - Hacer que la pagina del create use una Form en vez de cosas sueltas
 - Hacer que en la view del item no se pase el max width ni el max height
 - Evitar que se guarde cualquier cosa si no se sube una foto
