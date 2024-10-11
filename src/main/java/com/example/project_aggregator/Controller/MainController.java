@@ -242,17 +242,23 @@ public class MainController {
     }
 
     @GetMapping("/editItem")
-    public ModelAndView editItemGet(HttpServletRequest request, Model model, @RequestParam Integer item){
+    public String editItemGet(HttpServletRequest request, Model model, @RequestParam Integer item) throws IOException{
 
         List<Integer> idlist = Arrays.asList(item);
         Item itemFound = this.itemRepository.findAllById(idlist).get(0);
 
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("editItem");
+        PebbleEngine engine = new PebbleEngine.Builder().build();
+        PebbleTemplate compiledTemplate = engine.getTemplate("templates/editItem.html");
+
+        Map<String, Object> context = new HashMap<>();
         String referrer = request.getHeader("Referer");
-        model.addAttribute("backButtonSrc", referrer);
-        model.addAttribute("itemId", itemFound.getId());
-        return mav;
+        context.put("backButtonSrc", referrer);
+        context.put("itemId", itemFound.getId());
+
+        Writer writer = new StringWriter();
+        compiledTemplate.evaluate(writer, context);
+        String output = writer.toString();
+        return output;
     }
 
     @PostMapping("/editItem")

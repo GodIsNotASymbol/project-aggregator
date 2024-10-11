@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html th:replace="~{HeaderAndSidebarTemplate :: layout}"></html>
+{% extends "templates/HeaderAndSidebarTemplate.html" %}
+
+{% block bodyContent %}
 <script>
     function saveInput(){
             var formData = new FormData();
@@ -45,13 +46,15 @@
 <div class="main_page container">
     <div class="inner-frame">
         <div class="row">
-            <a th:href="${backButtonSrc}" ><h3>BACK</h3></a>
+            <a href={{ backButtonSrc }}>
+                <h3>BACK</h3>
+            </a>
         </div>
         <div class="row">
             <div class="col-sm">Title</div>
             <div class="col-sm">
                 <input type="text" id="title" placeholder="Item's title">
-                <input type="hidden" id="itemId" th:value="${itemId}">
+                <input type="hidden" id="itemId" value={{ itemId }}>
             </div>
         </div>
         <div class="row">
@@ -67,5 +70,4 @@
     </div>
 
 </div>
-</body>
-</html>
+{% endblock %}
