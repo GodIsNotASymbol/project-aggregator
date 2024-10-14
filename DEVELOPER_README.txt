@@ -1,14 +1,6 @@
----Objetivo---
-Hacer una aplicacion que implemente diferentes conceptos y tecnologias de java en el mismo ecosistema, 
-preferiblemente construyendo desde las bases de java.
-Acercarse lo mayormente posible a https://github.com/FoxtrotPotato/JavaRetooling/tree/main/Chicken%20Test
-
 -- Instalacion --
 Realizar la instalacion del docker mysql siguiendo las instrucciones del repositorio
 
-
----Arquitectura/Tecnologias---
-Programar en orden de aparicion...
 
 ---------------------Ejecutable aparte--------------------------
 - Ejecutable al que se le pasa una string, y la guarda en la base de datos (Mysql)
@@ -103,7 +95,7 @@ Bootstrap.
 
 -----------------------------------------------------------------
 -----TODO (Web Dev):
-https://github.com/FoxtrotPotato/JavaRetooling/tree/main/Chicken%20Test
+
 - Buscar cursos en udemy sobre Java, pagarlos si es necesario para las certificaciones
 - Hacer google codelabs https://codelabs.developers.google.com/?text=java
 - Udemy: Java, java spring boot
