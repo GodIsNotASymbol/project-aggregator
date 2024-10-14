@@ -1,26 +1,5 @@
--- Instalacion --
-Realizar la instalacion del docker mysql siguiendo las instrucciones del repositorio
 
-
----------------------Ejecutable aparte--------------------------
-- Ejecutable al que se le pasa una string, y la guarda en la base de datos (Mysql)
-- Mysql tiene que estar dockerizada
-- Tiene que tener un readme que explique como usar el ejecutable. O tenga un "usage"
-- Tiene que tener en el readme como hacer la installation
-TODO:
-- Hacer que el docker de mysql sea publicado y que se pueda correr directamente con docker run. [NO HACE FALTA]
-DONE:
------------------------------------------------------------------
-
-Aplicacion web:
-- Una aplicacion web, Spring Boot MVC, que sea un RSS feed aggregator. TODO agregar otras capabilidades
-- Maven para manejar las dependencias
-- GIT para manejar el versionado
-- Mysql para guardar los datos (fijarse si se puede usar docker)
-- Tiene que tener en el readme como hacer la installation
-- Desde el spring initializr pude elegir Spring Boot MVC que usa apache Tomcat como server
-
------TODO(Pagina aggregator)-----------------------------------
+-----TODO(project-aggregator)-----------------------------------
 - Como hago para publicar y abrir a la web la IP y el puerto? Explorar deploy en amazon web services
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
@@ -28,7 +7,7 @@ Aplicacion web:
 - Poner en la sidebar lo que se desea: el ig, el boton mainPage-->editPage el contacto de whatsapp. [DEFERRED]
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
------DONE(Pagina aggregator)------------------------------------------
+-----DONE(project-aggregator)------------------------------------------
 - Poner en la barra un boton que cambie de mainPageView a editItemView [CANCELLED]
 - Reescribir todas las views como para que usen Pebble en vez de Thymeleaf
 - Cambiar la template engine de Thymeleaf a Pebble
@@ -87,18 +66,10 @@ MAYBE:
 - Bajar Spring Boot y configurar la ide con JetBrains IDEA
 
 
-
 ------Project Agregator Description-------
 Project Aggregator is a private e-commerce/vlog webpage developed using the Java Spring Boot framework ecosystem.
 The technologies used to develop the webpage include: Spring Security, Spring Boot MVC, the Pebble template engine, Mysql, Docker, 
 Bootstrap.
 
 -----------------------------------------------------------------
------TODO (Web Dev):
-
-- Buscar cursos en udemy sobre Java, pagarlos si es necesario para las certificaciones
-- Hacer google codelabs https://codelabs.developers.google.com/?text=java
-- Udemy: Java, java spring boot
-- Me sirve esto?: https://java-programming.mooc.fi/
-- 
------DONE:
+- https://java-programming.mooc.fi/
