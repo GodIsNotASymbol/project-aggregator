@@ -54,7 +54,7 @@ MAYBE:
 - Implementar pagina de login, implementar roles, que roles pueden ver que paginas
 - LOgin backend video
 - Register video
-- finish Spring Boot Security - Users & Roles video https://youtu.be/YkA4cunsU9g?list=PL82C6-O4XrHe3sDCodw31GjXbwRdCyyuY
+- finish Spring Boot Security - Users & Roles video https://youtu.be/YkA4cunsU9g?list=PL82C6-O4XrHe3sDCodw31GjXbwRdCyyuY https://www.youtube.com/watch?v=HyoLl3VcRFY
 - Hacer que la pagina del create use una Form en vez de cosas sueltas
 - Hacer que en la view del item no se pase el max width ni el max height
 - Evitar que se guarde cualquier cosa si no se sube una foto
