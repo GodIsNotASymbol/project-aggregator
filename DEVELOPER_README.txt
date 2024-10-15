@@ -8,6 +8,7 @@
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(project-aggregator)------------------------------------------
+- Hacer el diagrama entidad relacion y publicarlo como parte de la documentacion
 - Poner en la barra un boton que cambie de mainPageView a editItemView [CANCELLED]
 - Reescribir todas las views como para que usen Pebble en vez de Thymeleaf
 - Cambiar la template engine de Thymeleaf a Pebble
