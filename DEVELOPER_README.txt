@@ -1,7 +1,8 @@
 
 -----TODO(project-aggregator)-----------------------------------
-- Averiguar vercel app
+- Development stalled for now. It only works when running the commands on the host machine.
 -----DONE(project-aggregator)------------------------------------------
+- Write Dockerfile
 - Removed sidebar
 - Hacer que la viewItem tenga cards en vez de que este el titulo la imagen y el texto suelto.
 - Hacer que el boton Back de viewItem tenga un border y una card alrededor. text-decoration: none y que en hover sea de color azul.
