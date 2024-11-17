@@ -101,7 +101,7 @@ public class MainController {
 
     @GetMapping("/")
     public RedirectView redirect(){
-        String url = "/mainPage?page=1";
+        String url = "/aboutUs";
         return new RedirectView(url);
     }
 
