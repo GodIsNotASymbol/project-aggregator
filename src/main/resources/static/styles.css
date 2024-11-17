@@ -37,10 +37,20 @@ html {
     /*background-color: red;*/
     margin: 0 auto;
     text-align: center;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     font-family: cursive;
     font-size: 400%;
+}
+
+.inner_header a {
+    color: black;
+    text-decoration: none;
+}
+
+.inner_header a:hover {
+    color: #007acc;
+    text-decoration: none;
 }
 
 .sidebar{
@@ -55,7 +65,7 @@ background-color:  rgba(163, 227, 196, 0.75);
 .main_page{
 max-height: 100%;
 position: fixed;
-left: 250px;
+/*left: 250px;*/
 top: 80px;
 display: flex;
 justify-content: center;
@@ -72,12 +82,51 @@ justify-content: center;
 
 .inner-frame{
     position: fixed;
-    left: 250px;
+    left: 0px;
     top: 80px;
-    width: 80%;
+    width: 100%;
     height: auto;
     max-height:100%;
     padding: 5%;
     overflow: auto;
     overflow-y: auto;
+}
+
+/* Parent Container */
+.item-box {
+    background-color: #ffffff; /* Light color for contrast */
+    border: 1px solid #ccc; /* Optional border for definition */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for elevation */
+    padding: 16px;
+    margin: 16px;
+    text-align: center; /* Center content */
+    max-width: 300px; /* Set a fixed width for consistency */
+}
+
+/* Image Styling */
+.item-image {
+    border-radius: 4px; /* Optional: rounded corners */
+    margin-bottom: 8px;
+}
+
+/* Title Styling */
+.item-title {
+    color: #333; /* Darker color for readability */
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.item-title a {
+    color: black;
+}
+
+.item-title a:hover {
+    text-decoration: none;
+}
+
+.item-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: transform 0.3s ease;
 }
