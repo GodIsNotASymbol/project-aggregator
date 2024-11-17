@@ -1,6 +1,9 @@
 
 -----TODO(project-aggregator)-----------------------------------
-- Completar about us. Ponerle una card al inner frame
+- Hacer que la viewItem tenga cards en vez de que este el titulo la imagen y el texto suelto.
+- Hacer que el boton Back de viewItem tenga un border y una card alrededor. text-decoration: none y que en hover sea de color azul.
+- Hacer lo de la item-box para el createAndEditPage
+- Hacer lo mismo de viewItem en editItem o createItem, revisar
 - Como hago para publicar y abrir a la web la IP y el puerto? Explorar deploy en amazon web services
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
@@ -9,6 +12,7 @@
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(project-aggregator)------------------------------------------
+- Completar about us. Ponerle una card al inner frame
 - Hacer como cartas para cada una de las publicaciones hechas en la pagina principal
 - Hacer el diagrama entidad relacion y publicarlo como parte de la documentacion
 - Poner en la barra un boton que cambie de mainPageView a editItemView [CANCELLED]
