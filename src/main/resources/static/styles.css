@@ -130,3 +130,14 @@ justify-content: center;
     transform: scale(1.05); /* Slightly enlarge on hover */
     transition: transform 0.3s ease;
 }
+
+.about-us {
+    background-color: #ffffff; /* Light color for contrast */
+    border: 1px solid #ccc; /* Optional border for definition */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for elevation */
+    padding: 16px;
+    margin: 16px;
+    text-align: center; /* Center content */
+    max-width: 700px; /* Set a fixed width for consistency */
+}
