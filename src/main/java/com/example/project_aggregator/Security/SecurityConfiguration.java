@@ -37,6 +37,7 @@ public class SecurityConfiguration  {
                             authorizeHttp.requestMatchers("/viewItem").permitAll();
                             authorizeHttp.requestMatchers("/styles.css").permitAll();
                             authorizeHttp.requestMatchers("/butterflies_background.jpg").permitAll();
+                            authorizeHttp.requestMatchers("/aboutUs").permitAll();
                             /*authorizeHttp.requestMatchers("/api/auth/register").permitAll();
                             authorizeHttp.requestMatchers("/api/auth/loginUser").permitAll();
                             authorizeHttp.requestMatchers("/loginPage").permitAll();*/

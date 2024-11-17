@@ -1,5 +1,6 @@
 
 -----TODO(project-aggregator)-----------------------------------
+- Completar about us. Ponerle una card al inner frame
 - Como hago para publicar y abrir a la web la IP y el puerto? Explorar deploy en amazon web services
 - Chequear que funcione localmente, Explorar los limites de algunas cosas
 - Chequear que funcione localmente y a ver que le parece a ma
@@ -8,6 +9,7 @@
 MAYBE:
 - Alterar la pagina principal como para que muestre las fotos en los encuadres
 -----DONE(project-aggregator)------------------------------------------
+- Hacer como cartas para cada una de las publicaciones hechas en la pagina principal
 - Hacer el diagrama entidad relacion y publicarlo como parte de la documentacion
 - Poner en la barra un boton que cambie de mainPageView a editItemView [CANCELLED]
 - Reescribir todas las views como para que usen Pebble en vez de Thymeleaf

@@ -105,8 +105,19 @@ public class MainController {
         return new RedirectView(url);
     }
 
+    @GetMapping("/aboutUs")
+    public String aboutUsPage(HttpServletRequest request) throws IOException{
+        PebbleEngine engine = new PebbleEngine.Builder().build();
+        PebbleTemplate compiledTemplate = engine.getTemplate("templates/aboutUs.html");
+        Writer writer = new StringWriter();
+        Map<String, Object> context = new HashMap<>();
+        compiledTemplate.evaluate(writer, context);
+        String output = writer.toString();
+        return output;
+    }
+
     @GetMapping("/mainPage")
-    public String mainPage(@RequestParam Integer page, Model model) throws IOException {
+    public String mainPage(@RequestParam Integer page) throws IOException {
         // page is just the page number
         int pageIndex = page-1;
         int pageSize = 3;
@@ -139,7 +150,7 @@ public class MainController {
     }
 
     @GetMapping("/createAndEditPage")
-    public String createAndEditPage(HttpServletRequest request,  Model model,
+    public String createAndEditPage(HttpServletRequest request,
                                           @RequestParam(value = "page", required = false) Integer page) throws IOException {
         // page is just the page number
         if(page == null){page = 1;}
