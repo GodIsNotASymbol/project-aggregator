@@ -1,13 +1,8 @@
 
 -----TODO(project-aggregator)-----------------------------------
-- Averiguar vercel app 
-- Chequear que funcione localmente, Explorar los limites de algunas cosas
-- Chequear que funcione localmente y a ver que le parece a ma
-- Investigar como hacer para que sea linda la pagina web
-- Poner en la sidebar lo que se desea: el ig, el boton mainPage-->editPage el contacto de whatsapp. [DEFERRED]
-MAYBE:
-- Alterar la pagina principal como para que muestre las fotos en los encuadres
+- Averiguar vercel app
 -----DONE(project-aggregator)------------------------------------------
+- Removed sidebar
 - Hacer que la viewItem tenga cards en vez de que este el titulo la imagen y el texto suelto.
 - Hacer que el boton Back de viewItem tenga un border y una card alrededor. text-decoration: none y que en hover sea de color azul.
 - Completar about us. Ponerle una card al inner frame
