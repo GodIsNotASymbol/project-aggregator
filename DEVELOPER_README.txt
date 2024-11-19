@@ -1,6 +1,7 @@
 
 -----TODO(project-aggregator)-----------------------------------
-- Development stalled for now. It only works when running the commands on the host machine.
+- Run EC2 Instance and make it so that anyone fron the net can view the app
+- Add API endpoints documentation, maybe do that automatically? add to docs
 -----DONE(project-aggregator)------------------------------------------
 - Write Dockerfile
 - Removed sidebar

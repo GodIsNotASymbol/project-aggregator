@@ -9,3 +9,4 @@ Bootstrap, Maven.
 - Now under the target directory there will be a file called `project-aggregator-0.0.1-SNAPSHOT.jar`
 - Run `java -jar $PWD/target/project-aggregator-0.0.1-SNAPSHOT.jar`
 - The app will receive connections on "localhost:8080/"
+- Read doc/API.pdf to get an overview of the webpage
