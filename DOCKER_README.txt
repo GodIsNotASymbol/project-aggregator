@@ -1,5 +1,5 @@
 # Create the docker image
-docker run --name zero-app-mysql -e MYSQL_ROOT_PASSWORD=P4ssw0rd -d mysql:8.4.1
+docker run --name zero-app-mysql -e MYSQL_ROOT_PASSWORD=P4ssw0rd -p 3307:3306 -d mysql:8.4.1
 # use this to enter and create the database
 docker exec -it zero-app-mysql bash
 # connect as root to mysql and create database named zero

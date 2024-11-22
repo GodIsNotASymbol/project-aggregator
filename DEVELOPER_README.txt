@@ -1,8 +1,8 @@
 
 -----TODO(project-aggregator)-----------------------------------
-- Run EC2 Instance and make it so that anyone fron the net can view the app
-- Add API endpoints documentation, maybe do that automatically? add to docs
 -----DONE(project-aggregator)------------------------------------------
+- Add API endpoints documentation, maybe do that automatically? add to docs
+- Run EC2 Instance and make it so that anyone from the net can view the app
 - Write Dockerfile
 - Removed sidebar
 - Hacer que la viewItem tenga cards en vez de que este el titulo la imagen y el texto suelto.
